@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Splash } from './components/Splash';
 import { AnimatedBackground } from './components/AnimatedBackground';
 import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Achievements } from './components/Achievements';
 import { Skills } from './components/Skills';
@@ -28,6 +29,7 @@ export default function App() {
   }, []);
 
   const navLinks = [
+    { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Achievements', href: '#achievements' },
     { name: 'Skills', href: '#skills' },
@@ -122,6 +124,10 @@ export default function App() {
 
             {/* Sections */}
             <Hero />
+
+            <div id="projects">
+              <Projects />
+            </div>
             
             <div id="experience">
               <Experience />
@@ -164,7 +170,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2 }}
             >
-              {['Hero', 'Experience', 'Achievements', 'Skills', 'Education'].map((section, i) => (
+              {['Hero', 'Projects', 'Experience', 'Achievements', 'Skills', 'Education'].map((section, i) => (
                 <div key={section} className="group flex items-center justify-end gap-3 cursor-pointer">
                   <span className="text-[10px] font-mono text-white/0 group-hover:text-white/40 transition-all uppercase tracking-widest">
                     {section}
